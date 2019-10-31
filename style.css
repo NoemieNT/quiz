@@ -11,16 +11,15 @@ html {
 }
 
 body {
-    font-family: 'font-family: 'Nunito',sans-serif';
+    font-family: 'Cinzel', serif;
     font-size: 25px;
     background-repeat: no-repeat;
     margin: 0;
     padding: 0;
-    height: 100%;
+    height: 200%;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: cover;
 }
 
 /* HOME PAGE */
@@ -29,15 +28,35 @@ body {
     align-items: center;
     justify-content: center;
     padding-top: 150px;
+    background-size: cover;
+    background-image: url("./images/trip\ and\ coffee.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.title {
+    margin: 100px 0 0 0;
+    color: #DA960D;
+    text-shadow: 4px 4px 5px red;
+    opacity: 0.5;
+}
+
+#pHome {
+    margin: 20px 0px 0px;
+    color: rgb(212, 152, 32);
+    text-shadow: 4px 4px 5px rgb(218, 78, 13)
 }
 
 .home .box {
-    border: 1px solid;
+    border: 1px solid white;
     padding: 20px;
+    margin: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    height: 700px;
+
 }
 
 .home .box .button {
@@ -50,9 +69,10 @@ body {
 }
 
 /* button */
+
+
 .btn {
-    width: 100%;
-    background: brown;
+
     color: pink;
     font-weight: bold;
     height: 40px;
@@ -60,15 +80,82 @@ body {
     justify-content: center;
     align-items: center;
     max-width: 120px;
-    margin: 10px 0;
+    margin: 50px 0;
     cursor: pointer;
     border-radius: .4rem;
+    padding: 0.5em 3em;
+    border: 0.16em solid #FFFFFF;
+    margin: 40px;
+    box-sizing: border-box;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 400;
+    text-align: center;
+    transition: all 0.15s;
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    background: #da580d
 }
 
-.btn:hover {
-    color: beige;
-    background: white;
-    border: 1px solid brown;
+.btn:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #00ffd5, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.btn:hover:active {
+    color: #000
+}
+
+.btn:hover:active:after {
+    background: transparent;
+}
+
+.btn:hover:before {
+    opacity: 1;
+}
+
+.btn:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
 }
 
 /* questions 
