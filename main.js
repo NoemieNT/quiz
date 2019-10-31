@@ -116,13 +116,18 @@ function launchChronometer() {
   const progress = timer.querySelector("#update");
   const chrono = new Chronometer();
 
-  progress.style.display = `block`;
-  progress.style.transition = `none`;
   progress.style.width = `0%`;
 
   function progressRender(percent) {
     progress.style.transition = `width 1s linear`;
     progress.style.width = percent + "%";
+    if (percent === 100) {
+      const to = setTimeout(() => {
+        progress.style.transition = `none`;
+        clearTimeout(to);
+      }, 1000);
+    }
+    console.log(percent);
   }
 
   chrono.startClick(function getCurrentTime(time) {
@@ -131,14 +136,12 @@ function launchChronometer() {
     progressRender((time * 100) / roundTimeLimit);
 
     if (time === roundTimeLimit) {
-      progressRender(100);
-      chrono.stopClick(); // don't move it
-
-      setTimeout(function resetChronometer() {
+      chrono.resetClick();
+      let to = setTimeout(function resetChronometer() {
         currentQuestion++;
-        chrono.resetClick();
         displayQuestion(currentQuestion);
-      }, 1000);
+        clearTimeout(to);
+      }, 1100);
     }
   });
 }
