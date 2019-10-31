@@ -21,7 +21,7 @@ const questions = [
     correct: "A"
   },
   {
-    question: "What is the most debated subject in the area ?",
+    question: "What is the most debated subject in the field ?",
     choiceA: "JQuery vs React ?",
     choiceB: "Word vs Excel ?",
     choiceC: "Composition vs Inheritence ?",
@@ -49,7 +49,7 @@ const questions = [
     correct: "A"
   },
   {
-    question: "Which one of your TA's has the longuer hair ? ",
+    question: "Which one of your TA's has the longuest hair ? ",
     choiceA: "Frank ?",
     choiceB: "Clara ?",
     choiceC: "Anais ? ",
@@ -58,7 +58,7 @@ const questions = [
   {
     question: "What's your favourite torture tool ?",
     choiceA: "iterm2, for it's super clean look ?",
-    choiceB: "VSCode with a thousand file in it ? ",
+    choiceB: "VSCode with a thousand files in it ? ",
     choiceC: "Codepen when it does not want to log anymore ? ",
     correct: "B"
   }
