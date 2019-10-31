@@ -1,0 +1,122 @@
+/* ID */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Dosis', sans-serif;
+    font-size: 25px;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+/* HOME PAGE */
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 150px;
+}
+
+.home .box {
+    border: 1px solid;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.home .box .button {
+    border: 1px solid;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+/* button */
+.btn {
+    width: 100%;
+    background: blue;
+    color: white;
+    font-weight: bold;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 120px;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: .4rem;
+}
+
+.btn:hover {
+    color: blue;
+    background: white;
+    border: 1px solid blue;
+}
+
+/* questions 
+*/
+
+.container {
+    border: 1px solid;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+}
+
+.questionTitle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#question {
+    background-size: cover;
+    background-image: url("./images/coffee.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.choice #A .choice #B .choice #C #progress {
+    width: 200px;
+    height: 4px;
+    border: 1px solid;
+    position: relative;
+}
+
+#progress #update {
+    width: 100%;
+    height: 10px;
+    background: dodgerblue;
+}
+
+#scoreContainer {
+    display: block;
+}
+
+.result {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 150px;
+}
