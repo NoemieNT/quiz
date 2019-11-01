@@ -215,18 +215,18 @@ body {
 
 .result {
     color: rgb(212, 53, 32);
-    text-shadow: 4px 4px 5px rgb(209, 142, 42) border: 1px solid;
+    text-shadow: 4px 4px 5px rgb(209, 142, 42);
+    border: 1px solid;
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    height: 120vh;
-    background-image: url(/images/brick\ wall.jpeg);
+    height: 90vh;
+    background-image: url("./images/brick-wall.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
-    width: 190vh;
-    height: 100vh;
+    /* width: 100vh;*/
 }
 
 .resultTitle {
@@ -244,13 +244,13 @@ body {
 
 #scoreSentences {
     font-size: 40px;
-    margin: 10px 0px 80px 0px;
+    margin: 10px 0px 10px 0px;
     color: rgb(212, 53, 32);
     text-shadow: 4px 4px 5px rgb(31, 30, 28)
 }
 
 #scoreImg {
-    margin-top: 300px;
+    /* margin-top: 10px; */
     display: flex;
     align-content: center;
 }
