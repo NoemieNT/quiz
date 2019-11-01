@@ -12,7 +12,7 @@ html {
 
 body {
     font-family: 'Cinzel', serif;
-    font-size: 25px;
+    font-size: 35px;
     background-repeat: no-repeat;
     margin: 0;
     padding: 0;
@@ -27,7 +27,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 150px;
+    padding-top: 120px;
     background-size: cover;
     background-image: url("./images/trip\ and\ coffee.jpeg");
     background-position: center;
@@ -50,12 +50,12 @@ body {
 .home .box {
     border: 1px solid white;
     padding: 20px;
-    margin: 100px;
+    margin: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 700px;
+    height: 600px;
 
 }
 
@@ -168,14 +168,14 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    height: 90vh;
-    font
+    height: 70vh;
 }
 
 .questionTitle {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 100px 0px 30px 0px;
 }
 
 #question {
@@ -183,6 +183,11 @@ body {
     background-image: url("./images/coffee.jpeg");
     background-position: center;
     background-repeat: no-repeat;
+    margin: 50px 0px 0px 0px;
+    font-size: 40px;
+    color: #2F281A;
+    text-shadow: 4px 4px 5px whitesmoke;
+
 }
 
 .choice #A .choice #B .choice #C #progress {
@@ -191,6 +196,7 @@ body {
     border: 1px solid;
     position: relative;
 }
+
 
 #progress #update {
     width: 100%;
@@ -208,8 +214,43 @@ body {
 }
 
 .result {
+    color: rgb(212, 53, 32);
+    text-shadow: 4px 4px 5px rgb(209, 142, 42) border: 1px solid;
+    padding: 20px;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding-top: 150px;
+    justify-content: flex-start;
+    height: 120vh;
+    background-image: url(/images/brick\ wall.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 190vh;
+    height: 100vh;
+}
+
+.resultTitle {
+    font-size: 40px;
+    color: rgb(212, 53, 32);
+    text-shadow: 4px 4px 5px rgb(209, 142, 42)
+}
+
+.result #finalScore {
+    font-size: 30px;
+    margin: 20px 0px 0px 0px;
+    color: rgb(212, 53, 32);
+    text-shadow: 4px 4px 5px rgb(209, 142, 42)
+}
+
+#scoreSentences {
+    font-size: 40px;
+    margin: 10px 0px 80px 0px;
+    color: rgb(212, 53, 32);
+    text-shadow: 4px 4px 5px rgb(31, 30, 28)
+}
+
+#scoreImg {
+    margin-top: 300px;
+    display: flex;
+    align-content: center;
 }

@@ -43,8 +43,8 @@ const questions = [
   },
   {
     question: "What is your favourite beverage for coding long hours?",
-    choiceA: "weird coffee ? ",
-    choiceB: "friday beer ? ",
+    choiceA: "Weird coffee ? ",
+    choiceB: "Friday beer ? ",
     choiceC: "Water from the Brita, because I'm bio ?",
     correct: "A"
   },
@@ -57,7 +57,7 @@ const questions = [
   },
   {
     question: "What's your favourite torture tool ?",
-    choiceA: "iterm2, for it's super clean look ?",
+    choiceA: "Iterm2, for it's super clean look ?",
     choiceB: "VSCode with a thousand files in it ? ",
     choiceC: "Codepen when it does not want to log anymore ? ",
     correct: "B"

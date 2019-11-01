@@ -17,7 +17,6 @@ function resetMainContainer() {
 
 function loadTemplate(tplName, clbk) {
   axios.get(`template/${tplName}.html`).then(tpl => {
-    // console.log(tpl.data);
     mainContainer.innerHTML += tpl.data;
     clbk();
   });
@@ -27,7 +26,6 @@ function setupHome() {
   const btnStart = document.getElementById("start");
   console.log(btnStart);
   btnStart.onclick = function() {
-    console.log("j'ai été clické");
     resetMainContainer();
     loadTemplate("question", launchQuizz);
   };
@@ -42,13 +40,11 @@ function launchQuizz() {
 }
 
 function displayResults() {
-  console.log(mainContainer);
-  mainContainer.innerHTML += `<h3>Your score is ${score}</h3>`;
-
+  finalScore.innerHTML += `<h3>Your score is ${score}</h3>`;
   const sentences = {
-    0: "Wax on, wax off little NOOB",
-    1: "Wax on, wax off little NOOB",
-    2: "Wax on, wax off little NOOB",
+    0: "Wax on, wax off NOOB",
+    1: "Wax on, wax off NOOB",
+    2: "Wax on, wax off NOOB",
     3: "Almost there, Baby-IronHacker!",
     4: "Almost there, Baby-IronHacker!",
     5: "Welcome Home WebDev ! ",
@@ -58,16 +54,14 @@ function displayResults() {
     9: " Congratulations ! Biggest IRONHACKER Ever ! ",
     10: "Congratulations ! Biggest IRONHACKER Ever !"
   };
+  // scoreSentences.innerHTML = sentences;
 
-  console.log(sentences[score]);
-  mainContainer.innerHTML += `<p>${sentences[score]}</p>`;
+  // console.log(sentences[score]);
+  scoreSentences.innerHTML += `<p>${sentences[score]}</p>`;
 }
-// afficher le score
-// un petit gif fait tjs son effet (giphy.com :)
-// afficher un bouton pour relancer le jeu
 
+// question and radio btn (from doc "question")
 function displayQuestion(index) {
-  // console.log("nous en sommes à la question ", index, questions[index]);
   if (index <= roundsLimit) {
     const target = document.getElementById("question");
     const question = target.querySelector("#text");
@@ -98,6 +92,7 @@ function displayQuestion(index) {
   } else endGame();
 }
 
+// adding answers to the score var
 function listenAnswer(inputs, answer) {
   inputs.forEach(input => {
     input.oninput = function() {
@@ -116,6 +111,8 @@ function launchChronometer() {
   const progress = timer.querySelector("#update");
   const chrono = new Chronometer();
 
+  //gauge
+
   progress.style.width = `0%`;
 
   function progressRender(percent) {
@@ -129,9 +126,8 @@ function launchChronometer() {
     }
     console.log(percent);
   }
-
+  // gauge and timer, passing to the next question
   chrono.startClick(function getCurrentTime(time) {
-    // console.log(time);
     counter.textContent = time;
     progressRender((time * 100) / roundTimeLimit);
 
@@ -146,9 +142,11 @@ function launchChronometer() {
   });
 }
 
+// End of the game (reset container, page result with the score)
 function endGame() {
   resetMainContainer();
   loadTemplate("result", displayResults);
 }
 
+// loading the template, back to homepage
 loadTemplate("home", setupHome);
