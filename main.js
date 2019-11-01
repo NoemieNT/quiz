@@ -1,7 +1,7 @@
 import questions from "./questions.js";
 import Chronometer from "./Chrono.js";
 
-// DOM VARS
+// DOM VARS (main container)
 const mainContainer = document.getElementById("main_container");
 
 // GAME VARS
@@ -11,10 +11,12 @@ var currentQuestion = 0;
 var score = 0;
 var result = 0;
 
+// function that will empty the main
 function resetMainContainer() {
   mainContainer.innerHTML = "";
 }
 
+// Loading the templates (home, questions, chrono, results)
 function loadTemplate(tplName, clbk) {
   axios.get(`template/${tplName}.html`).then(tpl => {
     mainContainer.innerHTML += tpl.data;
@@ -22,15 +24,18 @@ function loadTemplate(tplName, clbk) {
   });
 }
 
+// Home Page (recupere le btnstart, dès qu'on click, on efface le main et on load le template de question, appelle de la fonction launch quizz)
+
 function setupHome() {
   const btnStart = document.getElementById("start");
-  console.log(btnStart);
+  // console.log(btnStart);
   btnStart.onclick = function() {
     resetMainContainer();
     loadTemplate("question", launchQuizz);
   };
 }
 
+// fonction de demarrage du quizz : les variables currentQuestion et score sont à zero. load du template chrono, affichage de la question.
 function launchQuizz() {
   currentQuestion = 0;
   score = 0;
@@ -39,6 +44,7 @@ function launchQuizz() {
   });
 }
 
+// fonction resultats, contient un object : en fonction du score, il affiche la valeur en string.
 function displayResults() {
   finalScore.innerHTML += `<h3>Your score is ${score}</h3>`;
   const sentences = {
@@ -54,9 +60,6 @@ function displayResults() {
     9: " Congratulations ! Biggest IRONHACKER Ever ! ",
     10: "Congratulations ! Biggest IRONHACKER Ever !"
   };
-  // scoreSentences.innerHTML = sentences;
-
-  // console.log(sentences[score]);
   scoreSentences.innerHTML += `<p>${sentences[score]}</p>`;
 }
 
@@ -92,7 +95,7 @@ function displayQuestion(index) {
   } else endGame();
 }
 
-// adding answers to the score var
+// adding answers or not adding to the score var
 function listenAnswer(inputs, answer) {
   inputs.forEach(input => {
     input.oninput = function() {
